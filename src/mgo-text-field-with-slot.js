@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-export class MgoTextField extends LitElement {
+export class MgoTextFieldWithSlot extends LitElement {
   static styles = css`
     .form-control {
       display: flex;
@@ -12,7 +12,7 @@ export class MgoTextField extends LitElement {
     return html`
       <div class="form-control">
         <label for="MyForm__name">
-          Input Label
+          <slot name="label"></slot>
         </label>
         <input id="MyForm__name" />
       </div>
@@ -20,4 +20,4 @@ export class MgoTextField extends LitElement {
   }
 }
 
-customElements.define('mgo-text-field', MgoTextField);
+customElements.define('mgo-text-field-with-slot', MgoTextFieldWithSlot);
